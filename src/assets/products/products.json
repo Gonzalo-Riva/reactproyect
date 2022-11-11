@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "price": 0,
+        "name": "campera",
+        "description": "descripcion",
+        "stock": 1,
+        "image": "camperamrlbr",
+        "category": "ropa"
+    },
+    {
+        "id": 1,
+        "price": 0,
+        "name": "Cigarrillos",
+        "description": "descripcion",
+        "stock": 1,
+        "image": "path",
+        "category": "ropa"
+    }
+]

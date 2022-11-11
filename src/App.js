@@ -1,19 +1,8 @@
-import Navbar from "./components/Navbar";
-import ItemListContainer from "./components/ItemListContainer";
-import CartWidget from "./components/CartWidget.js";
+import React from 'react'
+import Item from './components/Item'
+import Router from './Router'
 
-const App = () => {
-  return (
-    <div>
-      <Navbar />
-      <ItemListContainer />
-
-      <CartWidget />
-
-    </div>
-
-  )
-}
+const App = () => (<Router />)
 
 
-export default App;
+export default App
