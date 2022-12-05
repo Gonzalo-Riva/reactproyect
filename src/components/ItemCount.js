@@ -1,19 +1,33 @@
 import React, { useState } from "react"
 
-const Contador = () => {
+const Contador = ({ stock, initial, onAdd }) => {
 
-    const [contador, setContador] = useState(0);
+    const [contador, setContador] = useState(initial);
+    const restar = () => {
+        if (contador > 0) {
 
-    return <div>
-        <p>Agregar al carrito {contador} veces</p>
-        <button onClick={() => { setContador(contador + 1) }}>Agregar</button>
+            setContador(contador - 1)
+        }
+    }
+    const sumar = () => {
+        if (contador < stock) {
+            setContador(contador + 1)
+        }
+    }
 
-        <button onClick={() => { setContador(0) }}>Restablecer</button>
+    return (
+        <>
 
-        <button onClick={() => { setContador(contador - 1) }}>Quitar</button>
+            <div>
+                <button onClick={sumar}>+</button>
+                <span>{contador}</span>
 
-    </div>
-
+                <button onClick={restar}>-</button>
+            </div>
+            <button onClick={() => onAdd(contador)}>Comprar</button>
+            <button disabled={contador === 0} onClick={() => onAdd(contador)}>Comprar</button>
+        </>
+    )
 
 
 }

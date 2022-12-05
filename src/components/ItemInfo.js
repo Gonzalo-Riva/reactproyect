@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItemCount from '../components/ItemCount'
 
 const ItemInfo = ({ product }) => {
-    console.log(product)
+    const [compra, setCompra] = useState(false)
+    const onAdd = (cantidad) => {
+        console.log(`compraste ${cantidad} de items`)
+        setCompra(true)
+    }
     return (
         <div>
             <div className="article-container">
@@ -17,6 +21,7 @@ const ItemInfo = ({ product }) => {
                     <p>Stock: {product.stock}</p>
 
                 </div>
+                {compra ? <button> ir al carrito</button> : <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />}
 
             </div>
         </div>
