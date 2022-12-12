@@ -1,9 +1,9 @@
 [
     {
         "id": 0,
-        "price": 0,
-        "name": "campera",
-        "description": "descripcion",
+        "price": 18599.99,
+        "name": "Feikampera",
+        "description": "Campera que utilizo Faker cuando preñó a la selección mexicana en la Fifa World Cup Qatar 2022. Firmada por Lionel 'Sexo' Scaloni.",
         "stock": 1,
         "image": "camperamrlbr",
         "category": "ropa"
@@ -14,7 +14,7 @@
         "name": "Cigarrillos",
         "description": "descripcion",
         "stock": 1,
-        "image": "path",
+        "image": "camperamrlbr",
         "category": "ropa"
     }
 ]

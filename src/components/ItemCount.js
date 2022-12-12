@@ -18,14 +18,18 @@ const Contador = ({ stock, initial, onAdd }) => {
     return (
         <>
 
-            <div>
-                <button onClick={sumar}>+</button>
-                <span>{contador}</span>
+            <div className="d-flex flex-row bd-highlight align-items-center">
+                <button className="btn btn-outline-dark flex-shrink-0 me-2" type="button" onClick={sumar}>+</button>
+                <span className="me-2">{contador}</span>
 
-                <button onClick={restar}>-</button>
+                <button className="btn btn-outline-dark flex-shrink-0 me-4" type="button" onClick={restar}>-</button>
+                <button className="btn btn-outline-dark flex-shrink-0" type="button" disabled={contador === 0} onClick={() => onAdd(contador)}>
+                    <i className="bi-cart-fill me-1"></i>
+                    Comprar
+                </button>
             </div>
-            <button onClick={() => onAdd(contador)}>Comprar</button>
-            <button disabled={contador === 0} onClick={() => onAdd(contador)}>Comprar</button>
+
+
         </>
     )
 

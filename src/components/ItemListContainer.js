@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getProducts } from '../services/products'
 import List from './Itemlist'
+import { getItems } from "../app/api"
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
 
     const { category } = useParams();
-    console.log(category)
     useEffect(() => {
-        getProducts(category).then(data => {
+
+        getItems().then(data => {
             setProducts(data)
         })
     }, [category]);

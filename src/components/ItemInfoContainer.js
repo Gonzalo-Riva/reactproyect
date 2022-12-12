@@ -1,19 +1,18 @@
 import { useState, useEffect } from 'react'
-import { getProduct } from '../services/products'
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import ItemInfo from './ItemInfo';
+import { getItems, getItemById } from "../app/api"
 
 const ItemInfoContainer = () => {
     const { id } = useParams()
-    const [product, setProduct] = useState([])
+    const [product, setProduct] = useState({})
 
     useEffect(() => {
-        getProduct(id).then(data => {
-            console.log(data)
+        getItemById(id).then(data => {
             setProduct(data)
         })
-    })
+    }, [id])
     return (
         <div className='cajaCardProduct'>
             <ItemInfo product={product} />
